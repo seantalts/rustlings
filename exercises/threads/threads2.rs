@@ -3,8 +3,6 @@
 // Building on the last exercise, we want all of the threads to complete their work but this time
 // the spawned threads need to be in charge of updating a shared value: JobStatus.jobs_completed
 
-// I AM NOT DONE
-
 use std::sync::Arc;
 use std::thread;
 use std::time::Duration;
@@ -21,6 +19,7 @@ fn main() {
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(250));
             // TODO: You must take an action before you update a shared value
+
             status_shared.jobs_completed += 1;
         });
         handles.push(handle);
